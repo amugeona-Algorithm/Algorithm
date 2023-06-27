@@ -1,4 +1,4 @@
-package 민호.DataStructure1;
+package 민호.DataStructure2;
 
 import java.util.*;
 
