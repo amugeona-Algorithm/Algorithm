@@ -1,44 +1,30 @@
 package 준석.week1;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.*;
+import java.util.stream.Collectors;
 
 //https://www.acmicpc.net/problem/2075
 public class BJ2075 {
-    public void sortArray(Integer[] array) {
-        Arrays.sort(array, Collections.reverseOrder());
-    }
+    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-    public Integer[] makeArray(Scanner scanner, int size) {
-        int arraySize = size * size;
-        Integer[] array = new Integer[arraySize];
+    public static List<Integer> splitInputNumber(int size) throws IOException {
 
+        List<String> copyString = new ArrayList<>();
         for (int i = 0; i < size; i++) {
-            array[i] = Integer.valueOf(splitInputNumber(scanner, size)[i]);
+            Collections.addAll(copyString, br.readLine().split(" "));
         }
-        return array;
+        return copyString.stream().map(Integer::parseInt)
+                .sorted(Collections.reverseOrder())
+                .collect(Collectors.toList());
     }
 
-    public String[] splitInputNumber(Scanner scanner, int size) {
-        String[] array = new String[size];
+    public static void main(String[] args) throws IOException {
 
-        for (int i = 0; i < size; i++) {
-            String stringValue = scanner.nextLine();
-            array = stringValue.split(" ");
-        }
-        return array;
+        int size = Integer.parseInt(br.readLine());
+
+        System.out.println(splitInputNumber(size).get(size - 1));
     }
-
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int inputNumber = scanner.nextInt();
-
-        BJ2075 result = new BJ2075();
-        Integer[] array = result.makeArray(scanner, inputNumber);
-
-        result.sortArray(array);
-        System.out.println(array[inputNumber - 1]);
-    }
-
 }
