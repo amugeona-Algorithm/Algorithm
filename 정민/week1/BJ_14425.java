@@ -1,4 +1,4 @@
-package 정민;
+package 정민.week1;
 
 import java.io.BufferedReader;
 import java.io.IOException;
