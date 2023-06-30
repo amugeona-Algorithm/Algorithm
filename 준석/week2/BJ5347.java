@@ -1,4 +1,4 @@
-package 준석.week1;
+package 준석.week2;
 
 import java.io.BufferedReader;
 import java.io.IOException;
