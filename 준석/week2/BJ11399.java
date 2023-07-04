@@ -24,7 +24,7 @@ public class BJ11399 {
         List<Integer> sortedList = list.stream().sorted().collect(Collectors.toList());
 
         int sum = 0;
-        for (int j = 0; j < sortedList.size(); j++) {
+        for (int j = 0; j < sortedList.size(); j++) { //1*5 + 2*4 + 3*3 + 3*2 + 5*1
             sum += sortedList.get(j) * (sortedList.size() - j);
         }
         System.out.println(sum);

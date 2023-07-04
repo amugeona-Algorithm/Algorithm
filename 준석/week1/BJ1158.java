@@ -1,7 +1,11 @@
 package 준석.week1;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+
 
 //https://www.acmicpc.net/problem/1158
 public class BJ1158 {
@@ -53,8 +57,11 @@ public class BJ1158 {
         }
     }
 
-    public static void main(String[] args) {
-        BJ1158 bj1158 = new BJ1158(7, 3);
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        String data = bufferedReader.readLine();
+        String[] size = data.split(" ");
+        BJ1158 bj1158 = new BJ1158(Integer.parseInt(size[0]), Integer.parseInt(size[1]));
 
         bj1158.playJosephusPermutation();
     }
