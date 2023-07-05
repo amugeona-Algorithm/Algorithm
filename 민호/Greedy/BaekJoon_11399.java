@@ -5,8 +5,8 @@ import java.io.*;
 
 public class BaekJoon_11399 {
     /**
-     * 백준 1931
-     * Greedy 회의실 배정
+     * 백준_1931
+     * Greedy ATM 문제
      */
 
     static int N;
