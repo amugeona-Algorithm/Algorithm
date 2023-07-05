@@ -6,7 +6,7 @@ import java.io.*;
 public class BaekJoon_2578 {
     /**
      * 백준 2578
-     * 빙고
+     * 빙고 문제
      */
 
     static int[][] player = new int[5][5];
