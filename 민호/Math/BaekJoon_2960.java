@@ -28,13 +28,9 @@ public class BaekJoon_2960 {
             list.add(i);
         }
 
-        Collections.sort(list);
-
         for (int l : list) {
             setPrime(l, primeList);
         }
-
-        Collections.sort(primeList);
 
         for (int i = 0; i < primeList.size(); i++) {
             int prime = primeList.get(i);
