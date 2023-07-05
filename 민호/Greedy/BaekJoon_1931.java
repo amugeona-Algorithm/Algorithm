@@ -5,8 +5,8 @@ import java.io.*;
 
 public class BaekJoon_1931 {
     /**
-     * 백준 1931
-     * 회의실 배정
+     * 백준_1931
+     * 회의실 배정 문제
      * compareTo Override "https://st-lab.tistory.com/243"
      */
 
