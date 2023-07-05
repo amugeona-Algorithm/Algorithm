@@ -15,15 +15,18 @@ public class BJ14425 {
     }
 
     public long countIncludedWords(List<String> collectionA, List<String> collectionB) {
-        return collectionA.stream().filter(word -> collectionB.contains(word)).count();
+        return collectionB.stream()
+                .filter(word -> collectionA.contains(word))
+                .count();
     }
 
     public static void main(String[] args) {
         BJ14425 collection = new BJ14425();
 
         Scanner scanner = new Scanner(System.in);
-
-        System.out.println(collection.countIncludedWords(collection.addCollection(scanner, 3),collection.addCollection(scanner, 2)));
+        String number = scanner.nextLine();
+        String[] array = number.split(" ");
+        System.out.println(collection.countIncludedWords(collection.addCollection(scanner, Integer.parseInt(array[0])), collection.addCollection(scanner, Integer.parseInt(array[1]))));
     }
 
 }
