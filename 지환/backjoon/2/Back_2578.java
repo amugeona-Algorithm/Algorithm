@@ -20,7 +20,6 @@ public class Back_2578 {
             }
         }
 
-        //빙고판 입력
         for (int i = 1; i <= 5; i++) {
             StringTokenizer st = new StringTokenizer(br.readLine());
             for (int j = 0; j < 5; j++) {
