@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Stack;
 import java.util.StringTokenizer;
 
 public class Back_1260 {
@@ -35,34 +34,20 @@ public class Back_1260 {
             map[c1][c2] = 1;
             map[c2][c1] = 1;
         }
-        dfs(V);
+
+        int[] dfs_visit = new int[N + 1];
+        dfs(V,dfs_visit);
         sb.append("\n");
         bfs(V);
         System.out.println(sb);
     }
 
-
-    private static void dfs(int start) {
-        Stack<Integer> s = new Stack<>();
-        int visit[] = new int[N + 1];
+    private static void dfs(int start, int [] visit) {
         visit[start] = 1;
-        s.push(start);
         sb.append(start).append(" ");
-
-        while (!s.isEmpty()) {
-            int cur_v = s.peek(); // 현재 갖고 있는 정점 확인. remove 아님
-            boolean isEnd = false; // 탐색 중, 끝을 찍었는지 여부
-            for (int i = 1; i < map.length; i++) {
-                if (map[cur_v][i] == 1 && visit[i] != 1) {
-                    visit[i] = 1;
-                    s.push(i);
-                    sb.append(s.peek()).append(" ");
-                    isEnd = true;
-                    break;
-                }
-            }
-            if (!isEnd) {
-                s.pop();
+        for (int i = 0; i <= N; i++) {
+            if (map[start][i] == 1 && visit[i] != 1) {
+                dfs(i,visit);
             }
         }
     }
