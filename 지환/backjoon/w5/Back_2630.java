@@ -1,3 +1,4 @@
+package Algorithm.지환.backjoon.w5;
 
 import java.io.*;
 import java.util.*;
