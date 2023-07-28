@@ -1,10 +1,8 @@
-package 준석.week5;
+package 준석.준석.week5;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
 
 public class BJ15649 {
     static int N;
