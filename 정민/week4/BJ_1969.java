@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
-public class BJ_1968 {
+public class BJ_1969 {
 
     /*
      * 백준 1969
