@@ -24,11 +24,6 @@ public class BaekJoon_1074 {
 
         int size = (int) Math.pow(2, N);
 
-        /*board = new ArrayList[size];
-        for(int i=0; i<size; i++){
-            board[i] = new ArrayList<>();
-        }*/
-
         Z(0, 0, size);
     }
 
@@ -42,12 +37,6 @@ public class BaekJoon_1074 {
         } else {   //정사각형의 크기가 2가 되면 숫자 부여
             for (int i = sr; i < sr + size; i++) {
                 for (int j = sc; j < sc + size; j++) {
-                   /*board[i].add(count);
-                   count++;
-                   if (i == R && j == C){
-                       System.out.println(board[i].get(j));
-                       return;
-                   }*/
                     count++;
                     if (i == R && j == C)
                         System.out.println(count - 1);
