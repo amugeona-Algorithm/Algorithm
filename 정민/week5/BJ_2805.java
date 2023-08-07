@@ -18,7 +18,6 @@ public class BJ_2805 {
             tree[i] = sc.nextInt();
             max = Math.max(tree[i], max);
         }
-        System.out.println(max);
 
         int res = 0;
 
@@ -33,13 +32,13 @@ public class BJ_2805 {
         while (low < high) {
             int sum = 0;
             int mid = (low + high) / 2; // 반으로 이분탐색, 자를 높이
-            System.out.println("mid : " + mid);
+
             for (int i = 0; i < N; i++) {
                 if (tree[i] - mid > 0) {
                     sum += tree[i] - mid; // 음수면 저장하면 안되니까~
                 }
             }
-            System.out.println("sum : " + sum);
+
             if (sum < M) {
                 high = mid;
             } else if (sum >= M) { // 높이 반 자르기
