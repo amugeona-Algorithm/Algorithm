@@ -50,7 +50,7 @@ public class BaekJoon_20438 {
             PS(value);
         }
 
-        int[] prefix = new int[6000];
+        int[] prefix = new int[N+1];
         for (int i = 3; i < N + 3; i++) {
             prefix[i] = prefix[i - 1];
             if (result[i] == 0)
