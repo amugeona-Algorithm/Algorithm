@@ -20,7 +20,6 @@ public class Back_16918 {
     static int R, C, N;
     static String[][] map;
     private static Queue<Point> q = new LinkedList<>();
-    private static int time = 0;
 
     public static void main(String[] args) throws IOException {
         int[] array = Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
