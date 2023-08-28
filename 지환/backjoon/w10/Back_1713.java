@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.StringTokenizer;
 
 public class Back_1713 {
-
     /*
     백준 1713
     후보 추천하기
@@ -32,21 +31,18 @@ public class Back_1713 {
             //사진 수가 다 안찼거나, 학생이 없으면
             if (!hasStudent(student) && pics.size() < N) {
                 pics.add(new Pic(1, student));
-
                 pics.stream().forEach(pic -> pic.time++);
                 Collections.sort(pics);
             } else { // 삭제후 추가 혹은 카운ㄴ트
                 if (hasStudent(student)) {
                     pics.forEach(pic -> {
-                        if (
-                                pic.number == student) {
+                        if (pic.id == student) {
                             pic.count++;
                         }
                     });
                     Collections.sort(pics);
                     continue;
                 }
-
                 //젤 적은거 제거
                 Collections.sort(pics);
                 pics.remove(0);
@@ -57,7 +53,7 @@ public class Back_1713 {
         Collections.sort(pics);
         List<Integer> objects = new ArrayList<>();
         for (Pic number : pics) {
-            objects.add(number.number);
+            objects.add(number.id);
         }
         Collections.sort(objects);
         for (int a : objects) {
@@ -66,17 +62,18 @@ public class Back_1713 {
     }
 
     private static boolean hasStudent(int student) {
-        return pics.stream().anyMatch(pic -> pic.number == student);
+        return pics.stream()
+                .anyMatch(pic -> pic.id == student);
     }
 
     static class Pic implements Comparable<Pic> {
         int count;
-        int number;
+        int id;
         int time;
 
-        public Pic(int count, int number) {
+        public Pic(int count, int id) {
             this.count = count;
-            this.number = number;
+            this.id = id;
         }
 
         @Override
