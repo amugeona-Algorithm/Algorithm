@@ -1,4 +1,4 @@
-package Algorithm.지환.backjoon.w7;
+package 지환.backjoon.w7;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
