@@ -1,4 +1,4 @@
-package Algorithm.지환.backjoon.w6;
+package 지환.backjoon.w6;
 
 import java.io.BufferedReader;
 import java.io.IOException;
