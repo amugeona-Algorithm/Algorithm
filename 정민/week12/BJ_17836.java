@@ -12,7 +12,7 @@ public class BJ_17836 {
      * 백준 17836
      * 공주님을 구해라
      */
-    static int N, M, T, res;
+    static int N, M, T, res, getGram;
     static int[] dr = { -1, 1, 0, 0 };
     static int[] dc = { 0, 0, -1, 1 }; // 상하좌우
     static int[][] map;
@@ -46,6 +46,7 @@ public class BJ_17836 {
 
             for (int j = 1; j <= M; j++) {
                 map[i][j] = Integer.parseInt(st.nextToken());
+
                 if (map[i][j] == 2) {
                     gramPos[0] = i;
                     gramPos[1] = j;
@@ -54,9 +55,17 @@ public class BJ_17836 {
         }
         // 0: 빈 공간, 1: 마법 벽, 2: 무기
         // 1,1 시작, 최단거리 -> bfs
+        res = 1000001;
+        getGram = Integer.MAX_VALUE;
 
         bfs();
-        System.out.println(res > T ? "false" : res);
+
+        res = Math.min(getGram, res);
+
+        if (res > T)
+            System.out.println("Fail");
+        else
+            System.out.println(res);
     }
 
     public static void bfs() {
@@ -69,26 +78,27 @@ public class BJ_17836 {
             int size = que.size();
 
             for (int i = 0; i < size; i++) {
-
                 Loca l = que.poll();
 
                 if (l.r == gramPos[0] && l.c == gramPos[1]) { // 검 찾으면
-                    res = time + (N - l.r) + (M - l.c);
+                    getGram = time + (N - gramPos[0]) + (M - gramPos[1]);
                     continue;
                 } else if (l.r == N && l.c == M) {
-                    res = Math.min(time, res);
+                    res = time;
                     return;
                 }
 
                 for (int d = 0; d < 4; d++) {
                     int nr = l.r + dr[d];
                     int nc = l.c + dc[d];
+
                     if (nr >= 1 && nc >= 1 && nr <= N && nc <= M && !visited[nr][nc] && map[nr][nc] != 1) {
                         que.add(new Loca(nr, nc));
                         visited[nr][nc] = true;
                     }
                 }
             }
+
             time++;
         }
 
